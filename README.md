@@ -106,7 +106,7 @@ Além disso, cada uma das opções deverá ser executada em um procedimento (mé
 
 # Entrega
 
-O trabalho deverá ser **entregue até o dia 08/06/2025**, no formato de pull request a este repositório.
+O trabalho deverá ser **entregue até o dia 08/06**, no formato de pull request a este repositório.
 Você deverá entregar no pull request o projeto contendo o código desenvolvido do programa. Ainda, forneça no próprio pull-request um checklist preenchido, representando o cumprimento das tarefas:
 
 - [ ] Arquitetura geral
