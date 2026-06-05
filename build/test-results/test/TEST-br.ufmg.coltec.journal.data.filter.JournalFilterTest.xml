@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="br.ufmg.coltec.journal.data.filter.JournalFilterTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2026-06-05T12:05:22" hostname="DESKTOP-0DH00JQ" time="0.024">
+  <properties/>
+  <testcase name="testFilterByDateRangeAndCategory()" classname="br.ufmg.coltec.journal.data.filter.JournalFilterTest" time="0.011"/>
+  <testcase name="testFilterByAllThreeCriteria()" classname="br.ufmg.coltec.journal.data.filter.JournalFilterTest" time="0.002"/>
+  <testcase name="testFilterBySubstringOnly()" classname="br.ufmg.coltec.journal.data.filter.JournalFilterTest" time="0.001"/>
+  <testcase name="testFilterBySubstringAndCategory()" classname="br.ufmg.coltec.journal.data.filter.JournalFilterTest" time="0.003"/>
+  <testcase name="testFilterByCategoryOnly()" classname="br.ufmg.coltec.journal.data.filter.JournalFilterTest" time="0.001"/>
+  <testcase name="testFilterBySubstringAndDateRange()" classname="br.ufmg.coltec.journal.data.filter.JournalFilterTest" time="0.001"/>
+  <testcase name="testFilterByDateRangeOnly()" classname="br.ufmg.coltec.journal.data.filter.JournalFilterTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
