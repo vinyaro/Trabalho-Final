@@ -2,7 +2,7 @@ plugins {
     id 'java'
 }
 
-group 'org.example'
+group 'br.ufmg.coltec.journal'
 version '1.0-SNAPSHOT'
 
 repositories {
@@ -10,10 +10,18 @@ repositories {
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    // Biblioteca para manipulação de JSON (Dica do enunciado do trabalho)
+    implementation 'com.google.code.gson:gson:2.10.1'
+
+    // Dependências atualizadas do JUnit 5 para os testes unitários
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.10.2'
 }
 
 test {
     useJUnitPlatform()
+    // Garante que o Gradle mostre no console quais testes passaram ou falharam
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
 }
