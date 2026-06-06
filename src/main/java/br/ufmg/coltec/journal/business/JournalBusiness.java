@@ -62,9 +62,29 @@ public class JournalBusiness {
     }
 
     /**
-     * Regra 3: Exporta as entradas filtradas ou totais (Corpo será integrado com a Abstract Factory)
+     * Regra 3: Exporta as entradas do diário para um arquivo externo utilizando Abstract Factory
      */
-    public void exportEntries(String type, String path) {
-        // Será implementado a seguir com as Factories de Exportação
+    public void exportEntries(String type, String path, List<JournalEntry> entriesToExport) throws java.io.IOException {
+        if (entriesToExport == null || entriesToExport.isEmpty()) {
+            throw new IllegalArgumentException("Não existem entradas na busca atual para serem exportadas.");
+        }
+
+        br.ufmg.coltec.journal.data.export.ExportFactory factory;
+
+        // O switch escolhe a fábrica concreta com base na decisão da interface de usuário (CLI)
+        switch (type.trim().toLowerCase()) {
+            case "json":
+                factory = new br.ufmg.coltec.journal.data.export.JsonExportFactory();
+                break;
+            case "csv":
+                factory = new br.ufmg.coltec.journal.data.export.CsvExportFactory();
+                break;
+            default:
+                throw new IllegalArgumentException("Formato de exportação não suportado: " + type);
+        }
+
+        // Fabricação e execução polimórfica (Sem expor detalhes de implementação de I/O)
+        br.ufmg.coltec.journal.data.export.Exporter exporter = factory.createExporter();
+        exporter.export(entriesToExport, path);
     }
 }

@@ -1,5 +1,5 @@
 package br.ufmg.coltec.journal.data.export;
 
-public class ExportFactory {
-
+public interface ExportFactory {
+    Exporter createExporter();
 }
