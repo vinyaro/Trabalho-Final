@@ -1,5 +1,10 @@
 plugins {
     id 'java'
+    id 'application'
+}
+
+application {
+    mainClass = 'br.ufmg.coltec.journal.presentation.Main'
 }
 
 group 'br.ufmg.coltec.journal'
@@ -24,4 +29,12 @@ test {
     testLogging {
         events "passed", "skipped", "failed"
     }
+}
+
+run {
+    // Conecta o teclado do terminal físico (System.in) ao processo do Java
+    standardInput = System.in
+    
+    // Força o uso de UTF-8 para corrigir os caracteres quebrados no console
+    jvmArgs "-Dfile.encoding=UTF-8"
 }
