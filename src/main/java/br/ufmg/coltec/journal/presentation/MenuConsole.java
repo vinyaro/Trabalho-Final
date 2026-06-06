@@ -105,8 +105,7 @@ public class MenuConsole {
     public void handleExportEntries() {
         System.out.println("\n--- [ EXPORTAR ENTRADAS ] ---");
         
-        // Se o usuário não filtrou nada antes, usamos todas as entradas registradas no sistema
-        List<String> emptyFilters = Arrays.asList("", "", "", "");
+        // Se o usuário não filtrou nada antes, buscamos todas as entradas usando filtros vazios
         List<JournalEntry> entriesToExport = (lastSearchResults != null) ? lastSearchResults : business.searchEntries("", "", "", "");
 
         if (entriesToExport.isEmpty()) {
@@ -115,6 +114,7 @@ public class MenuConsole {
         }
 
         System.out.print("Escolha o formato de destino (json / csv): ");
+        // ... restante do método igual ...
         String type = scanner.nextLine().trim().toLowerCase();
 
         System.out.print("Digite o nome ou caminho do arquivo final (Ex: meu_diario.json ou notas.csv): ");
